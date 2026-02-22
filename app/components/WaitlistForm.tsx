@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
 export function WaitlistForm() {
@@ -37,7 +37,7 @@ export function WaitlistForm() {
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Waitlist submission error:", errorText);
-      alert("Something went wrong while submitting. Please try again in a moment.");
+      alert("אירעה תקלה בשליחה. נסי שוב בעוד רגע.");
       setIsSubmitting(false);
       return;
     }
@@ -47,87 +47,141 @@ export function WaitlistForm() {
     setTimeout(() => {
       setSubmitted(false);
       setIsSubmitting(false);
-      setFormData({ fullName: "", phone: "", email: "", hasDivorceDoc: false, companyWebsite: "" });
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        hasDivorceDoc: false,
+        companyWebsite: "",
+      });
     }, 3000);
   };
 
   return (
-    <section id="contact" className="relative bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <div className="mb-10 text-center md:mb-12">
-          <h2 className="mb-5 font-['Viga',sans-serif] text-4xl text-[#0f172a] md:text-6xl">Let's Connect</h2>
-          <p className="mx-auto max-w-2xl font-['Noto_Sans',sans-serif] text-lg text-[#0f172a] opacity-60 md:text-xl">
-            Join us in transforming the LegalTech and FinTech landscape
+    <section
+      id="waitlist-form"
+      className="relative overflow-hidden py-24"
+      style={{ background: "linear-gradient(180deg, #0F172A 0%, #1a2332 100%)" }}
+    >
+      <div
+        className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full opacity-20 blur-3xl"
+        style={{ background: "radial-gradient(circle, #05FB90 0%, #B9FEE0 50%, transparent 100%)" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full opacity-20 blur-3xl"
+        style={{ background: "radial-gradient(circle, #B9FEE0 0%, #05FB90 50%, transparent 100%)" }}
+      />
+
+      <div className="relative mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-4xl font-extrabold text-white md:text-5xl">רוצה להיות משתמשת מייסדת?</h2>
+          <p className="text-lg text-[#B9FEE0] md:text-xl">
+            גישה ראשונה למערכת, השפעה על הפיצ׳רים, ותנאים מיוחדים לתמיד.
           </p>
         </div>
 
-        <div className="mx-auto max-w-2xl">
+        <div
+          className="relative overflow-hidden rounded-3xl bg-white p-6 shadow-[0_30px_80px_rgba(5,251,144,0.3)] md:p-10"
+        >
           {submitted ? (
-            <div className="rounded-3xl border border-[#05fb90]/30 bg-[#f7fff9] p-8 text-center shadow-[0px_20px_60px_0px_rgba(5,251,144,0.15)] md:p-10">
-              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#05fb90] to-[#b9fee0]">
-                <CheckCircle2 className="h-9 w-9 text-[#0f172a]" />
+            <div className="py-8 text-center">
+              <div
+                className="mb-6 inline-flex rounded-full p-6"
+                style={{
+                  background: "linear-gradient(135deg, #B9FEE0 0%, #05FB90 100%)",
+                  boxShadow: "0 20px 40px rgba(5, 251, 144, 0.4)",
+                }}
+              >
+                <CheckCircle size={56} style={{ color: "#0F172A" }} />
               </div>
-              <h3 className="mb-3 font-['Noto_Sans',sans-serif] text-2xl font-bold text-[#0f172a]">You're on the list</h3>
-              <p className="font-['Noto_Sans',sans-serif] text-base text-[#0f172a] opacity-70">
-                Thanks for signing up. We'll update you as soon as access opens.
-              </p>
+              <h3 className="mb-3 text-3xl font-bold text-[#0F172A]">תודה על ההרשמה!</h3>
+              <p className="text-xl text-[#0F172A]/70">נשלח לך עדכון ברגע שהמערכת תהיה זמינה</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6" id="waitlist-form">
-              <div>
-                <label htmlFor="fullName" className="mb-2 block font-['Noto_Sans',sans-serif] text-base font-medium text-[#0f172a]">
-                  Name
+            <form onSubmit={handleSubmit} className="space-y-6" id="waitlist-form-inner">
+              <div className="text-right">
+                <label htmlFor="fullName" className="mb-2 block font-bold text-[#0F172A]">
+                  שם מלא
                 </label>
                 <input
-                  id="fullName"
                   type="text"
+                  id="fullName"
                   required
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full rounded-2xl border-2 border-transparent bg-[#f0f0fa] px-6 py-4 font-['Noto_Sans',sans-serif] text-[#0f172a] outline-none transition-colors focus:border-[#05fb90]"
-                  placeholder="Your full name"
+                  className="w-full rounded-xl border-2 border-[#F0F0FA] bg-gradient-to-br from-[#F0F0FA] to-white px-5 py-4 text-right text-lg text-[#0F172A] outline-none transition-all focus:border-[#05FB90] focus:shadow-[0_0_20px_rgba(5,251,144,0.2)]"
+                  placeholder="הזיני את שמך המלא"
                 />
               </div>
 
-              <div>
-                <label htmlFor="phone" className="mb-2 block font-['Noto_Sans',sans-serif] text-base font-medium text-[#0f172a]">
-                  Phone
+              <div className="text-right">
+                <label htmlFor="phone" className="mb-2 block font-bold text-[#0F172A]">
+                  טלפון נייד
                 </label>
                 <input
-                  id="phone"
                   type="tel"
+                  id="phone"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full rounded-2xl border-2 border-transparent bg-[#f0f0fa] px-6 py-4 font-['Noto_Sans',sans-serif] text-[#0f172a] outline-none transition-colors focus:border-[#05fb90]"
-                  placeholder="Your mobile phone"
+                  className="w-full rounded-xl border-2 border-[#F0F0FA] bg-gradient-to-br from-[#F0F0FA] to-white px-5 py-4 text-right text-lg text-[#0F172A] outline-none transition-all focus:border-[#05FB90] focus:shadow-[0_0_20px_rgba(5,251,144,0.2)]"
+                  placeholder="050-1234567"
                 />
               </div>
 
-              <div>
-                <label htmlFor="email" className="mb-2 block font-['Noto_Sans',sans-serif] text-base font-medium text-[#0f172a]">
-                  Email
+              <div className="text-right">
+                <label htmlFor="email" className="mb-2 block font-bold text-[#0F172A]">
+                  כתובת אימייל
                 </label>
                 <input
-                  id="email"
                   type="email"
+                  id="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full rounded-2xl border-2 border-transparent bg-[#f0f0fa] px-6 py-4 font-['Noto_Sans',sans-serif] text-[#0f172a] outline-none transition-colors focus:border-[#05fb90]"
-                  placeholder="your.email@company.com"
+                  className="w-full rounded-xl border-2 border-[#F0F0FA] bg-gradient-to-br from-[#F0F0FA] to-white px-5 py-4 text-right text-lg text-[#0F172A] outline-none transition-all focus:border-[#05FB90] focus:shadow-[0_0_20px_rgba(5,251,144,0.2)]"
+                  placeholder="example@email.com"
                 />
               </div>
 
-              <label className="flex items-start gap-3 rounded-2xl bg-[#f0f0fa] px-4 py-4 font-['Noto_Sans',sans-serif] text-sm text-[#0f172a]">
-                <input
-                  type="checkbox"
-                  checked={formData.hasDivorceDoc}
-                  onChange={(e) => setFormData({ ...formData, hasDivorceDoc: e.target.checked })}
-                  className="mt-0.5 h-5 w-5 cursor-pointer rounded accent-[#05fb90]"
-                />
-                I already have a divorce ruling/agreement (optional)
-              </label>
+              <div className="flex h-[70px] w-full items-center gap-[13.896px] rounded-[16.212px] bg-[#f0f0fa] pr-[30px]" dir="rtl">
+                <div className="relative h-[30px] w-[30px] shrink-0">
+                  <input
+                    type="checkbox"
+                    id="hasDivorceDoc"
+                    checked={formData.hasDivorceDoc}
+                    onChange={(e) => setFormData({ ...formData, hasDivorceDoc: e.target.checked })}
+                    className="absolute right-0 top-0 h-[30px] w-[30px] cursor-pointer appearance-none rounded-[6px] border-0 bg-white"
+                    style={{ boxShadow: "0px 4px 10.7px 0px rgba(0,0,0,0.25)" }}
+                  />
+                  {formData.hasDivorceDoc ? (
+                    <svg
+                      className="pointer-events-none absolute right-1/2 top-1/2 -translate-y-1/2 translate-x-1/2"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M4 10L8 14L16 6"
+                        stroke="#05FB90"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ) : null}
+                </div>
+                <div className="h-[28px] flex-1 shrink-0">
+                  <label
+                    htmlFor="hasDivorceDoc"
+                    className="cursor-pointer text-right font-['Arial:Regular',sans-serif] text-[18.528px] leading-[27.793px] text-[#0f172a]"
+                    dir="auto"
+                  >
+                    יש לי פסק דין/הסכם גירושין (לא חובה להעלות כרגע)
+                  </label>
+                </div>
+              </div>
 
               <input
                 type="text"
@@ -139,25 +193,23 @@ export function WaitlistForm() {
                 className="hidden"
               />
 
-              <div className="flex flex-col gap-4 pt-2 sm:flex-row">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="flex-1 rounded-full px-10 py-5 font-['Noto_Sans',sans-serif] text-lg font-bold text-[#0f172a] shadow-[0px_23.16px_49.1px_0px_rgba(5,251,144,0.3)] transition-all hover:scale-[1.01] hover:shadow-[0px_28px_60px_0px_rgba(5,251,144,0.4)] disabled:cursor-not-allowed disabled:opacity-70"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(120.485deg, rgb(5, 251, 144) 41.43%, rgb(185, 254, 224) 94.857%)",
-                  }}
-                >
-                  {isSubmitting ? "Submitting..." : "Join Waitlist"}
-                </button>
-                <a
-                  href="#"
-                  className="flex-1 rounded-full border-2 border-[#00FF9D] bg-white px-10 py-5 text-center font-['Noto_Sans',sans-serif] text-lg font-bold text-[#0f172a] transition-colors hover:bg-[#e5fff4]"
-                >
-                  Request Pitch Deck
-                </a>
-              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full py-5 text-lg font-bold transition-all hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-70"
+                style={{
+                  background: "linear-gradient(135deg, #05FB90 0%, #B9FEE0 100%)",
+                  color: "#0F172A",
+                  boxShadow: "0 20px 60px rgba(5, 251, 144, 0.4), 0 0 40px rgba(5, 251, 144, 0.2)",
+                }}
+              >
+                <span className="relative z-10">{isSubmitting ? "שולחת..." : "כן, שמרי לי מקום"}</span>
+                <ArrowLeft size={24} className="relative z-10 transition-transform group-hover:-translate-x-1" />
+                <div
+                  className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-100"
+                  style={{ background: "linear-gradient(135deg, #B9FEE0 0%, #05FB90 100%)" }}
+                />
+              </button>
             </form>
           )}
         </div>

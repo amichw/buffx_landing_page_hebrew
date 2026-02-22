@@ -1,22 +1,22 @@
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { MarketOpportunity } from "./components/MarketOpportunity";
-import { Problem } from "./components/Problem";
-import { Solution } from "./components/Solution";
-import { Team } from "./components/Team";
+import { FAQSection } from "./components/FAQSection";
+import { HeroSection } from "./components/HeroSection";
+import { HowItWorksSection } from "./components/HowItWorksSection";
+import { PainSection } from "./components/PainSection";
+import { TrustSection } from "./components/TrustSection";
 import { WaitlistForm } from "./components/WaitlistForm";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" dir="rtl">
       <Header />
-      <main>
-        <Hero />
-        <Problem />
-        <Solution />
-        <MarketOpportunity />
-        <Team />
+      <main className="pt-0">
+        <HeroSection />
+        <PainSection />
+        <HowItWorksSection />
+        <TrustSection />
+        <FAQSection />
         <WaitlistForm />
       </main>
       <Footer />

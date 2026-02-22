@@ -1,250 +1,94 @@
-import React from 'react';
-import { Shield } from 'lucide-react';
+import Image from "next/image";
+import { Lock } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section 
-      className="relative pt-32 pb-20 overflow-hidden" 
-      style={{ 
-        background: 'linear-gradient(135deg, #F0F0FA 0%, #ffffff 50%, #F0F0FA 100%)'
-      }}
+    <section
+      className="relative overflow-hidden bg-[#f7f7f8] pb-16 pt-8 md:pb-20 md:pt-12"
+      style={{ minHeight: "640px" }}
     >
-      {/* Enhanced Decorative elements with gradients */}
-      <div 
-        className="absolute top-20 right-10 w-96 h-96 rounded-full opacity-40 blur-3xl animate-pulse"
-        style={{ 
-          background: 'radial-gradient(circle, #05FB90 0%, #B9FEE0 100%)'
-        }}
-      />
-      <div 
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-30 blur-3xl"
-        style={{ 
-          background: 'radial-gradient(circle, #B9FEE0 0%, #05FB90 50%, transparent 100%)'
-        }}
-      />
-      
-      {/* Additional gradient orbs */}
-      <div 
-        className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full opacity-20 blur-2xl"
-        style={{ 
-          background: 'radial-gradient(circle, #05FB90 0%, transparent 70%)'
-        }}
-      />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge with gradient border */}
-          <div 
-            className="inline-flex items-center gap-2 mb-8 px-6 py-3 rounded-full font-medium relative"
-            style={{ 
-              backgroundColor: '#0F172A',
-              color: '#05FB90',
-              boxShadow: '0 0 30px rgba(5, 251, 144, 0.3), inset 0 0 20px rgba(5, 251, 144, 0.1)'
-            }}
-          >
-            <div 
-              className="w-2 h-2 rounded-full animate-pulse" 
-              style={{ 
-                backgroundColor: '#05FB90',
-                boxShadow: '0 0 10px #05FB90'
-              }} 
-            />
-            <span>המערכת החכמה לגביית מזונות</span>
-          </div>
-          
-          {/* Main Heading */}
-          <h1 
-            className="mb-6 leading-tight"
-            style={{ 
-              fontSize: '4rem',
-              color: '#0F172A',
-              fontWeight: 800 
-            }}
-          >
-            הסוף למרדף אחרי{' '}
-            <span 
-              className="relative inline-block"
-              style={{ 
-                background: 'linear-gradient(135deg, #05FB90 0%, #B9FEE0 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
-            >
-              המזונות
-              <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
-                <defs>
-                  <linearGradient id="underlineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#05FB90" />
-                    <stop offset="100%" stopColor="#B9FEE0" />
-                  </linearGradient>
-                </defs>
-                <path d="M2 10C100 2, 200 2, 298 10" stroke="url(#underlineGradient)" strokeWidth="3" strokeLinecap="round"/>
-              </svg>
-            </span>
-          </h1>
-          
-          <h2 
-            className="mb-10 text-2xl leading-relaxed max-w-3xl mx-auto"
-            style={{ color: '#0F172A', opacity: 0.7 }}
-          >
-            הטכנולוגיה שלנו דואגת שתקבלי את הכסף, הוא מקבל דרישת תשלום מסודרת, ושניכם לא צריכים להחליף מילה.
-          </h2>
-          
-          {/* ⭐ VISUAL CENTERPIECE - Phone Mockup with Notification (CRITICAL!) */}
-          <div className="mb-10 flex justify-center">
-            <div className="relative" style={{ maxWidth: '320px', width: '100%' }}>
-              {/* Phone Frame with gradient border */}
-              <div 
-                className="relative rounded-[3rem] overflow-hidden mx-auto shadow-2xl"
-                style={{ 
-                  width: '100%',
-                  aspectRatio: '9/19',
-                  background: 'linear-gradient(135deg, #0F172A 0%, #1a2332 100%)',
-                  padding: '14px',
-                  boxShadow: '0 30px 80px rgba(15, 23, 42, 0.5)'
-                }}
-              >
-                {/* Phone Screen */}
-                <div 
-                  className="w-full h-full rounded-[2.5rem] overflow-hidden relative"
-                  style={{ backgroundColor: '#F0F0FA' }}
-                >
-                  {/* Blurred background - simulating medical/legal documents */}
-                  <div 
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: `
-                        linear-gradient(rgba(240, 240, 250, 0.95), rgba(240, 240, 250, 0.95)),
-                        repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(15, 23, 42, 0.03) 20px, rgba(15, 23, 42, 0.03) 22px),
-                        repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(15, 23, 42, 0.02) 100px, rgba(15, 23, 42, 0.02) 102px)
-                      `,
-                      filter: 'blur(2px)'
-                    }}
-                  />
-                  
-                  {/* Additional document texture */}
-                  <div 
-                    className="absolute top-12 left-8 right-8 space-y-2 opacity-20"
-                  >
-                    {[...Array(8)].map((_, i) => (
-                      <div 
-                        key={i}
-                        className="h-2 rounded"
-                        style={{ 
-                          backgroundColor: '#0F172A',
-                          width: i % 3 === 0 ? '70%' : '100%'
-                        }}
-                      />
-                    ))}
-                  </div>
-                  
-                  {/* ⭐ THE NOTIFICATION CARD - This is the centerpiece! */}
-                  <div 
-                    className="absolute top-16 left-4 right-4 p-5 rounded-2xl shadow-2xl animate-[slideDown_0.6s_ease-out]"
-                    style={{ 
-                      background: 'linear-gradient(135deg, #ffffff 0%, #F0F0FA 100%)',
-                      boxShadow: '0 20px 60px rgba(15, 23, 42, 0.3), 0 0 0 1px rgba(15, 23, 42, 0.05)'
-                    }}
-                  >
-                    {/* App Icon & Name */}
-                    <div className="flex items-start gap-3 mb-4">
-                      <div 
-                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                        style={{ 
-                          background: 'linear-gradient(135deg, #05FB90 0%, #B9FEE0 100%)',
-                          boxShadow: '0 4px 12px rgba(5, 251, 144, 0.4)'
-                        }}
-                      >
-                        <span className="text-2xl" style={{ color: '#0F172A', fontWeight: 900 }}>B</span>
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold mb-1" style={{ color: '#0F172A', fontSize: '14px' }}>Buffx</div>
-                        <div className="text-xs" style={{ color: '#0F172A', opacity: 0.5 }}>עכשיו</div>
-                      </div>
-                    </div>
-                    
-                    {/* ⭐ THE KEY MESSAGE - Payment Received Notification */}
-                    <div className="text-right">
-                      <div 
-                        className="text-xl font-bold mb-2"
-                        style={{ 
-                          background: 'linear-gradient(135deg, #05FB90 0%, #B9FEE0 100%)',
-                          WebkitBackgroundClip: 'text',
-                          WebkitTextFillColor: 'transparent',
-                          backgroundClip: 'text'
-                        }}
-                      >
-                        התקבל תשלום: 1,200 ₪
-                      </div>
-                      <div className="text-base font-medium" style={{ color: '#0F172A', opacity: 0.7 }}>
-                        (מחצית טיפול שיניים)
-                      </div>
-                    </div>
-                    
-                    {/* Success indicator */}
-                    <div className="mt-3 flex items-center gap-2 justify-end">
-                      <span className="text-xs font-medium" style={{ color: '#05FB90' }}>אושר ✓</span>
-                    </div>
-                  </div>
-                  
-                  {/* Decorative blurred cards at bottom (simulating other apps/content) */}
-                  <div 
-                    className="absolute bottom-20 left-6 right-6 h-14 rounded-xl opacity-10"
-                    style={{ backgroundColor: '#0F172A' }}
-                  />
-                  <div 
-                    className="absolute bottom-6 left-6 right-6 h-12 rounded-xl opacity-5"
-                    style={{ backgroundColor: '#0F172A' }}
-                  />
-                </div>
-                
-                {/* Phone notch */}
-                <div 
-                  className="absolute top-[14px] left-1/2 transform -translate-x-1/2 w-24 h-6 rounded-full z-10"
-                  style={{ 
-                    background: 'linear-gradient(135deg, #0F172A 0%, #1a2332 100%)'
-                  }}
-                />
-              </div>
-              
-              {/* Glow effect around phone */}
-              <div 
-                className="absolute inset-0 rounded-[3rem] opacity-30 blur-3xl -z-10"
-                style={{
-                  background: 'radial-gradient(circle, #05FB90 0%, transparent 70%)'
-                }}
+      <div dir="ltr" className="mx-auto grid w-full max-w-[1440px] gap-10 px-4 md:px-8 lg:grid-cols-[460px_1fr] lg:items-center lg:gap-8">
+        <div className="order-2 lg:order-1">
+          <div className="relative mx-auto h-[500px] w-[300px] sm:h-[620px] sm:w-[380px] md:h-[700px] md:w-[430px]">
+            <div className="absolute inset-x-0 bottom-6 top-[90px] rounded-[56px] bg-[#d6f8ea]" />
+            <div className="absolute -bottom-3 left-1/2 h-[120px] w-[320px] -translate-x-1/2 opacity-60 sm:w-[420px]">
+              <Image
+                src="/assets/figma/562dfad9144db2e5080566b92ca28c9f1491bfbf.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 320px, 420px"
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="absolute left-1/2 top-0 h-[470px] w-[270px] -translate-x-1/2 rotate-[12deg] sm:h-[590px] sm:w-[340px] md:h-[680px] md:w-[390px]">
+              <Image
+                src="/assets/figma/519000e58636ff0dffd19fcad73dccb88755e605.png"
+                alt="Buffx mobile app"
+                fill
+                sizes="(max-width: 640px) 270px, (max-width: 768px) 340px, 390px"
+                className="object-contain scale-x-[-1]"
+                priority
               />
             </div>
           </div>
-          
-          {/* CTA Button with gradient */}
-          <button 
-            className="px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 mb-6 relative overflow-hidden group"
-            style={{ 
-              background: 'linear-gradient(135deg, #05FB90 0%, #B9FEE0 100%)',
-              color: '#0F172A',
-              boxShadow: '0 20px 60px rgba(5, 251, 144, 0.4), 0 0 40px rgba(5, 251, 144, 0.2)'
-            }}
-            onClick={() => {
-              const form = document.getElementById('waitlist-form');
-              form?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <span className="relative z-10">אני רוצה שקט נפשי - הצטרפות לבטא</span>
-            {/* Hover gradient effect */}
-            <div 
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+
+          <div dir="rtl" className="mt-2 flex flex-col items-end lg:hidden">
+            <a
+              href="#waitlist-form"
+              className="inline-flex w-full items-center justify-center rounded-full px-8 py-4 text-center font-['Heebo',sans-serif] text-[1.25rem] font-bold text-[#0f172a] shadow-[0px_22px_48px_0px_rgba(5,251,144,0.35)] sm:w-auto sm:min-w-[460px]"
               style={{
-                background: 'linear-gradient(135deg, #B9FEE0 0%, #05FB90 100%)'
+                backgroundImage: "linear-gradient(120deg, #05fb90 35%, #b9fee0 100%)",
               }}
-            />
-          </button>
-          
-          {/* Trust Signal */}
-          <div className="flex items-center justify-center gap-2" style={{ color: '#0F172A', opacity: 0.6 }}>
-            <Shield size={18} />
-            <span className="font-medium">דיסקרטיות מלאה | הצפנת נתונים בסטנדרט מחמיר</span>
+            >
+              אני רוצה שקט נפשי - הצטרפות לבטא
+            </a>
+
+            <div className="mt-7 flex items-center gap-2 text-[#0f172a]">
+              <Lock className="h-5 w-5" />
+              <p className="font-['Arial',sans-serif] text-lg text-[#0f172a]">
+                דיסקרטיות מלאה | הצפנת נתונים בסטנדרט מחמיר
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div dir="rtl" className="order-1 text-right lg:order-2">
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-[#0b1536] px-6 py-3 text-[#10f6a2] md:px-8">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#10f6a2]" />
+            <span className="font-['Heebo',sans-serif] text-base font-medium">המערכת החכמה לגביית מזונות</span>
+          </div>
+
+          <h1 className="mb-6 font-['Heebo',sans-serif] text-[2.35rem] font-black leading-[1.12] text-[#0b1536] sm:text-[3rem] md:text-[4.5rem]">
+            <span className="bg-gradient-to-l from-[#08ec91] to-[#9ef8d7] bg-clip-text text-transparent">הסוף למרדף</span>{" "}
+            <span className="relative inline-block">
+              אחרי המזונות
+              <span className="absolute -bottom-1 right-0 h-[3px] w-full rounded-full bg-[#08ec91]" />
+            </span>
+            <span className="mt-1 block">ומחצית ההוצאות</span>
+          </h1>
+
+          <p className="mb-9 max-w-3xl font-['Arial',sans-serif] text-[1.15rem] leading-[1.7] text-[#5a6476] md:text-[2rem] md:leading-[1.45]">
+            הטכנולוגיה שלנו דואגת שתקבלי את הכסף, הוא מקבל דרישת תשלום מסודרת נשלחת אליו אוטומטית. בלי שיחות, בלי מריבות, בלי תזכורות.
+          </p>
+
+          <div className="hidden lg:flex lg:flex-col lg:items-end">
+            <a
+              href="#waitlist-form"
+              className="inline-flex w-full items-center justify-center rounded-full px-8 py-4 font-['Heebo',sans-serif] text-[1.4rem] font-bold text-[#0f172a] shadow-[0px_22px_48px_0px_rgba(5,251,144,0.35)] sm:w-auto sm:min-w-[460px]"
+              style={{
+                backgroundImage: "linear-gradient(120deg, #05fb90 35%, #b9fee0 100%)",
+              }}
+            >
+              אני רוצה שקט נפשי - הצטרפות לבטא
+            </a>
+
+            <div className="mt-7 flex items-center gap-2 text-[#0f172a]">
+              <Lock className="h-5 w-5" />
+              <p className="font-['Arial',sans-serif] text-lg text-[#0f172a]">
+                דיסקרטיות מלאה | הצפנת נתונים בסטנדרט מחמיר
+              </p>
+            </div>
           </div>
         </div>
       </div>

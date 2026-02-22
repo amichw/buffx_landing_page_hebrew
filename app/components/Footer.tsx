@@ -1,42 +1,57 @@
-import { Logo } from "./Logo";
+import React from 'react';
+const imgLogo1 = "/assets/figma/09ca3e49270162fc466a93ebbf1bb7df288e1365.png";
 
 export function Footer() {
   return (
-    <footer className="relative bg-white pb-12 pt-10 md:pt-12">
-      <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <div className="border-t border-[#0f172a]/10 pt-10 md:pt-12">
-          <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-            <Logo />
-
-            <div className="flex flex-wrap items-center justify-center gap-8">
-              <a
-                href="https://www.linkedin.com/in/hanna-barr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#0f172a] opacity-60 transition-opacity hover:opacity-100"
-                aria-label="LinkedIn"
-              >
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
-
-              <div className="flex items-center gap-6 font-['Noto_Sans',sans-serif] text-sm text-[#0f172a] opacity-60">
-                <a href="#" className="transition-opacity hover:opacity-100">
-                  Privacy Policy
-                </a>
-                <a href="#" className="transition-opacity hover:opacity-100">
-                  Terms of Service
-                </a>
-              </div>
-            </div>
+    <footer 
+      className="py-12"
+      style={{ 
+        backgroundColor: '#0F172A'
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Logo */}
+        <a
+          href="https://buffx.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative mb-4 flex h-12 items-center justify-center"
+        >
+          <div className="relative ml-[-5px] h-[51px] w-[51px]">
+            <img
+              alt="Buffx Logo"
+              className="absolute inset-0 object-cover pointer-events-none size-full"
+              src={imgLogo1}
+            />
           </div>
-
-          <div className="mt-8 text-center">
-            <p className="font-['Noto_Sans',sans-serif] text-sm text-[#0f172a] opacity-40">
-              © 2026 Buffx. All rights reserved. | Transforming Legal Rulings into Executable Financial Workflows
-            </p>
-          </div>
+          <p className="font-['Viga:Regular',sans-serif] text-[40px] leading-none text-white">BUFF</p>
+        </a>
+        
+        <p className="mb-8 text-lg" style={{ color: '#B9FEE0' }}>
+          הסוכנת החכמה שעושה את העבודה במקומך
+        </p>
+        
+        {/* Contact Us */}
+        <div className="mb-8">
+          <h3 className="text-lg font-bold mb-2" style={{ color: '#05FB90' }}>
+            צור קשר
+          </h3>
+          <a 
+            href="mailto:info@buffx.ai" 
+            className="text-white hover:text-[#05FB90] transition-colors"
+          >
+            info@buffx.ai
+          </a>
+        </div>
+        
+        <p className="text-sm mb-6" style={{ color: '#ffffff', opacity: 0.5 }}>
+          © 2026 Buffx. כל הזכויות שמורות.
+        </p>
+        
+        <div className="flex items-center justify-center gap-6 text-sm font-medium">
+          <a href="#" className="transition-colors hover:text-[#05FB90]" style={{ color: '#B9FEE0' }}>תנאי שימוש</a>
+          <div className="w-1 h-1 rounded-full" style={{ backgroundColor: '#05FB90' }} />
+          <a href="#" className="transition-colors hover:text-[#05FB90]" style={{ color: '#B9FEE0' }}>מדיניות פרטיות</a>
         </div>
       </div>
     </footer>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Logo() {
   return (
-    <div className="flex items-center">
+    <a href="https://buffx.ai" target="_blank" rel="noopener noreferrer" className="flex items-center">
       <span
         className="font-['Viga',sans-serif] text-3xl leading-none text-[#0f172a] md:text-4xl"
         style={{ WebkitTextStroke: "1px #0f172a" }}
@@ -19,6 +19,6 @@ export function Logo() {
           priority
         />
       </div>
-    </div>
+    </a>
   );
 }
