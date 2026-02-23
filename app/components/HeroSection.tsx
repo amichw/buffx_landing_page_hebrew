@@ -7,7 +7,7 @@ export function HeroSection() {
       className="relative overflow-hidden bg-[#f7f7f8] pb-16 pt-8 md:pb-20 md:pt-12"
       style={{ minHeight: "640px" }}
     >
-      <div dir="ltr" className="mx-auto grid w-full max-w-[1440px] gap-10 px-4 md:px-8 lg:grid-cols-[460px_1fr] lg:items-center lg:gap-8">
+      <div dir="ltr" className="mx-auto grid w-full max-w-[1440px] gap-4 px-4 sm:gap-6 md:gap-8 md:px-8 lg:grid-cols-[460px_1fr] lg:items-center lg:gap-8">
         <div className="order-2 lg:order-1">
           <div className="relative mx-auto h-[500px] w-[300px] sm:h-[620px] sm:w-[380px] md:h-[700px] md:w-[430px]">
             <div className="absolute inset-x-0 bottom-6 top-[90px] rounded-[56px] bg-[#d6f8ea]" />
@@ -33,7 +33,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div dir="rtl" className="mt-2 flex flex-col items-end lg:hidden">
+          <div dir="rtl" className="mt-2 flex flex-col items-center text-center lg:hidden">
             <a
               href="#waitlist-form"
               className="inline-flex w-full items-center justify-center rounded-full px-8 py-4 text-center font-['Heebo',sans-serif] text-[1.25rem] font-bold text-[#0f172a] shadow-[0px_22px_48px_0px_rgba(5,251,144,0.35)] sm:w-auto sm:min-w-[460px]"
@@ -44,9 +44,9 @@ export function HeroSection() {
               אני רוצה שקט נפשי - הצטרפות לבטא
             </a>
 
-            <div className="mt-7 flex items-center gap-2 text-[#0f172a]">
+            <div className="mt-7 flex items-center justify-center gap-2 text-[#0f172a]">
               <Lock className="h-5 w-5" />
-              <p className="font-['Arial',sans-serif] text-lg text-[#0f172a]">
+              <p className="font-['Arial',sans-serif] text-center text-lg text-[#0f172a]">
                 דיסקרטיות מלאה | הצפנת נתונים בסטנדרט מחמיר
               </p>
             </div>

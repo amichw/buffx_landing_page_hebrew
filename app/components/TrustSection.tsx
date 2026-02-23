@@ -29,9 +29,10 @@ export function TrustSection() {
 
         {/* Title with Logo */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-2">
+          <div className="mb-2 flex items-center justify-center gap-3 sm:gap-4">
             <h2 
-              className="font-['Heebo:Bold',sans-serif] font-bold text-4xl leading-tight text-[#0f172a] md:text-[56px] whitespace-nowrap"
+              className="font-['Heebo:Bold',sans-serif] font-bold leading-tight text-[#0f172a] whitespace-nowrap"
+              style={{ fontSize: "clamp(1.75rem, 7vw, 3.5rem)" }}
             >
               הסיפור מאחורי
             </h2>
@@ -77,7 +78,7 @@ export function TrustSection() {
               <p 
                 className="font-['Arial:Regular',sans-serif] leading-[26px] text-[#0f172a] text-[16px]"
                 dir="rtl"
-              >Buffx נולדה מתוך היכרות עמוקה עם שני העולמות: עשר שנות ניסיון בניהול פיננסי, והבנה מהשטח של האתגרים שנשים מתמודדות איתם בגביית מזונות. הטכנולוגיה שלנו עושה את מה שאף אחד לא עשה עד היום - שמה את הכוח בידיים שלך.<span dir="ltr">Buffx</span>השתתפנו במחזור ו' (2026) של אקסלרטור פורום מיכל סלה בשיתוף Google for Startups<br /><br /></p>
+              >Buffx נולדה מתוך היכרות עמוקה עם שני העולמות: עשר שנות ניסיון בניהול פיננסי, והבנה מהשטח של האתגרים שנשים מתמודדות איתם בגביית מזונות. הטכנולוגיה שלנו עושה את מה שאף אחד לא עשה עד היום - שמה את הכוח בידיים שלך.<br />השתתפנו במחזור ו' (2026) של אקסלרטור פורום מיכל סלה בשיתוף Google for Startups<br /><br /></p>
 
               {/* Partner Logos */}
               <div className="flex items-center gap-4 mt-4">

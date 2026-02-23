@@ -29,9 +29,10 @@ export function TrustSection() {
 
         {/* Title with Logo */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-2">
+          <div className="mb-2 flex items-center justify-center gap-3 sm:gap-4">
             <h2 
-              className="font-['Heebo:Bold',sans-serif] font-bold text-[56px] leading-tight text-[#0f172a] whitespace-nowrap"
+              className="font-['Heebo:Bold',sans-serif] font-bold leading-tight text-[#0f172a] whitespace-nowrap"
+              style={{ fontSize: "clamp(1.75rem, 7vw, 3.5rem)" }}
             >
               הסיפור מאחורי
             </h2>
