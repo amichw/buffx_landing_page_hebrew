@@ -20,7 +20,9 @@ export default function Container() {
         <p className="-translate-x-1/2 absolute bg-clip-text font-['Arial:Black',sans-serif] leading-[299.361px] left-[451px] not-italic text-[299.361px] text-center top-0" style={{ backgroundImage: "linear-gradient(-89.9558deg, rgb(5, 251, 144) 0%, rgb(185, 254, 224) 74.634%)", WebkitTextFillColor: "transparent" }}>
           4
         </p>
-        <p className="-translate-x-full absolute font-['Arial:Bold',sans-serif] leading-[20px] left-[calc(50%+92.2px)] not-italic text-[#05fb90] text-[14px] text-right top-[110.2px] tracking-[1.4px] whitespace-nowrap">ENFORCEMENT READY</p>
+        <p className="-translate-x-full absolute font-['Arial:Bold',sans-serif] leading-[20px] left-[calc(50%+92.2px)] not-italic text-[#05fb90] text-[14px] text-right top-[110.2px] tracking-[1.4px] whitespace-nowrap">
+          <bdi dir="ltr">ENFORCEMENT READY</bdi>
+        </p>
         <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[32px] left-1/2 not-italic text-[#0f172a] text-[24px] text-center top-[140px] w-[451.6px] whitespace-pre-wrap" dir="auto">
           לא שילם? התיק מוכן
         </p>

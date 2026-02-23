@@ -15,17 +15,6 @@ export function WaitlistForm() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setSubmitted(true);
-    
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        fullName: '',
-        phone: '',
-        email: '',
-        hasDivorceDoc: false
-      });
-    }, 3000);
   };
 
   return (

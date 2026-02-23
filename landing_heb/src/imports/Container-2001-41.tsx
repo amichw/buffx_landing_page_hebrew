@@ -18,7 +18,9 @@ export default function Container() {
         <p className="-translate-x-1/2 absolute bg-clip-text font-['Arial:Black',sans-serif] leading-[299.361px] left-[415px] not-italic text-[299.361px] text-center top-[1.73px]" style={{ backgroundImage: "linear-gradient(-89.9558deg, rgb(5, 251, 144) 0%, rgb(185, 254, 224) 74.634%)", WebkitTextFillColor: "transparent" }}>
           3
         </p>
-        <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[23.146px] left-[185.48px] not-italic text-[#05fb90] text-[16.203px] text-center top-[114.59px] tracking-[0.8101px] uppercase">Automated Collection</p>
+        <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[23.146px] left-[185.48px] not-italic text-[#05fb90] text-[16.203px] text-center top-[114.59px] tracking-[0.8101px] uppercase">
+          <bdi dir="ltr">Automated Collection</bdi>
+        </p>
         <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[32.405px] left-[calc(50%-68.52px)] not-italic text-[#0f172a] text-[23.146px] text-center top-[164.03px] w-[367.875px] whitespace-pre-wrap" dir="auto">
           דרישת תשלום נשלחת אליו
         </p>

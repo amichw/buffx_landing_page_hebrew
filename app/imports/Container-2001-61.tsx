@@ -39,7 +39,9 @@ export default function Container() {
         <p className="-translate-x-1/2 absolute bg-clip-text font-['Arial:Black',sans-serif] leading-[299.361px] left-[442px] not-italic text-[299.361px] text-center top-[-6.91px]" style={{ backgroundImage: "linear-gradient(-89.9558deg, rgb(5, 251, 144) 0%, rgb(185, 254, 224) 74.634%)", WebkitTextFillColor: "transparent" }}>
           2
         </p>
-        <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[23.146px] left-[calc(50%-55.73px)] not-italic text-[#05fb90] text-[16.203px] text-center top-[113.59px] tracking-[0.8101px] uppercase">Smart Tracking</p>
+        <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[23.146px] left-[calc(50%-55.73px)] not-italic text-[#05fb90] text-[16.203px] text-center top-[113.59px] tracking-[0.8101px] uppercase">
+          <bdi dir="ltr">Smart Tracking</bdi>
+        </p>
         <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[32.405px] left-[calc(50%-56.29px)] not-italic text-[#0f172a] text-[23.146px] text-center top-[163.03px] w-[367.875px] whitespace-pre-wrap" dir="auto">
           ההוצאות נאספות אוטומטית
         </p>

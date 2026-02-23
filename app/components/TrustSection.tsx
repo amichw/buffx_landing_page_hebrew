@@ -1,7 +1,6 @@
 import React from 'react';
 const imgGoogleForStartupsLogoSvg1 = "/assets/figma/7ed9d2c9656a71a86120344164b10d136ddf8e19.png";
 const img1 = "/assets/figma/498ad49a85fc2e17c1492c2d526951817680ed52.png";
-const imgTeamPhoto = "/assets/figma/100d6b0fb35db0415eb68bcdafcd7d2b6e9b1373.png";
 const imgLogo1 = "/assets/figma/09ca3e49270162fc466a93ebbf1bb7df288e1365.png";
 
 export function TrustSection() {
@@ -55,13 +54,19 @@ export function TrustSection() {
           {/* Image Card */}
           <div className="flex-shrink-0">
             <div 
-              className="w-full max-w-[493px] overflow-hidden rounded-[24px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.1)] aspect-[493/445]"
+              className="w-full max-w-[493px] overflow-hidden rounded-[24px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.1)] aspect-video"
             >
-              <img 
-                alt="הסיפור מאחורי Buffx" 
-                className="w-full h-full object-cover" 
-                src={imgTeamPhoto} 
-              />
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="הסיפור מאחורי Buffx"
+              >
+                <source src="/assets/team_vid.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
 

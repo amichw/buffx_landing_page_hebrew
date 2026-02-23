@@ -1,8 +1,46 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef, useState } from 'react';
 import Container1 from '../../imports/Container-2001-18';
 import Container2 from '../../imports/Container-2001-61';
 import Container3 from '../../imports/Container-2001-41';
 import Container4 from '../../imports/Container-2001-88';
+
+const BASE_CARD_WIDTH = 680;
+const BASE_CARD_HEIGHT = 420;
+
+function ResponsiveStepCard({ children }: { children: React.ReactNode }) {
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    if (!frameRef.current) return;
+
+    const observer = new ResizeObserver(([entry]) => {
+      const nextScale = Math.min(1, entry.contentRect.width / BASE_CARD_WIDTH);
+      setScale(nextScale);
+    });
+
+    observer.observe(frameRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={frameRef} className="relative w-full" style={{ height: `${BASE_CARD_HEIGHT * scale}px` }}>
+      <div
+        className="absolute left-1/2 top-0"
+        style={{
+          width: `${BASE_CARD_WIDTH}px`,
+          height: `${BASE_CARD_HEIGHT}px`,
+          transform: `translateX(-50%) scale(${scale})`,
+          transformOrigin: "top center",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export function HowItWorksSection() {
   return (
@@ -32,19 +70,19 @@ export function HowItWorksSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          <div style={{ height: '420px' }}>
+        <div className="grid gap-8 md:grid-cols-2">
+          <ResponsiveStepCard>
             <Container1 />
-          </div>
-          <div style={{ height: '420px' }}>
+          </ResponsiveStepCard>
+          <ResponsiveStepCard>
             <Container2 />
-          </div>
-          <div style={{ height: '420px' }}>
+          </ResponsiveStepCard>
+          <ResponsiveStepCard>
             <Container3 />
-          </div>
-          <div style={{ height: '420px' }}>
+          </ResponsiveStepCard>
+          <ResponsiveStepCard>
             <Container4 />
-          </div>
+          </ResponsiveStepCard>
         </div>
         
         {/* CTA Button */}

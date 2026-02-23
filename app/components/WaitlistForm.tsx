@@ -43,18 +43,7 @@ export function WaitlistForm() {
     }
 
     setSubmitted(true);
-
-    setTimeout(() => {
-      setSubmitted(false);
-      setIsSubmitting(false);
-      setFormData({
-        fullName: "",
-        phone: "",
-        email: "",
-        hasDivorceDoc: false,
-        companyWebsite: "",
-      });
-    }, 3000);
+    setIsSubmitting(false);
   };
 
   return (

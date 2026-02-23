@@ -39,7 +39,9 @@ export default function Container() {
             </IconVectorBackgroundImage>
           </div>
         </div>
-        <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[23.146px] left-[calc(50%-73.33px)] not-italic text-[#05fb90] text-[16.203px] text-center top-[119.04px] tracking-[0.8101px] uppercase">AI Analysis</p>
+        <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[23.146px] left-[calc(50%-73.33px)] not-italic text-[#05fb90] text-[16.203px] text-center top-[119.04px] tracking-[0.8101px] uppercase">
+          <bdi dir="ltr">AI Analysis</bdi>
+        </p>
         <p className="-translate-x-1/2 absolute font-['Arial:Bold',sans-serif] leading-[32.405px] left-[calc(50%-73.9px)] not-italic text-[#0f172a] text-[23.146px] text-center top-[168.47px] w-[367.875px] whitespace-pre-wrap" dir="auto">
           מעלה את פסק הדין
         </p>
